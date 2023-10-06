@@ -1,14 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "users/edit", type: :view do
-  let(:user) {
-    User.create!(
-      name: "MyString",
-      email: "MyString",
-      phone: "MyString",
-      cpf: "MyString"
-    )
-  }
+  let(:user) { create(:user) }
 
   before(:each) do
     assign(:user, user)
