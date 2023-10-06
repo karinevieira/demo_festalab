@@ -50,6 +50,9 @@ group :development, :test do
 
   # To help fixture creation [https://github.com/thoughtbot/factory_bot_rails]
   gem "factory_bot_rails", "6.2.0"
+
+  # Provides RSpec-compatible one-liners to test common Rails functionality [https://github.com/thoughtbot/shoulda-matchers]
+  gem "shoulda-matchers", "5.3.0"
 end
 
 group :development do
