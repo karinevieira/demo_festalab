@@ -61,3 +61,7 @@ group :development do
 
 end
 
+group :test do
+  # Framework library to test our code [https://github.com/rspec/rspec-rails/]
+  gem "rspec-rails", "6.0.3"
+end
