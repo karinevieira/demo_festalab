@@ -1,22 +1,22 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= user.name %>
-  </p>
+<div class="max-w-2xl px-4 py-8 mx-auto lg:py-16 flex justify-center">
+  <div id="<%= dom_id user %>" class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+    <div class="sm:col-span-2">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= user.name %></h5>
+    </div>
 
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
+    <div class="sm:col-span-2">
+      <p class="mb-3 font-normal text-gray-700">Email address</p>
+      <p class="block mb-2 font-medium text-gray-900"><%= user.email %></p>
+    </div>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= user.phone %>
-  </p>
+    <div class="sm:col-span-2">
+      <p class="mb-3 font-normal text-gray-700">Phone number</p>
+      <p class="block mb-2 font-medium text-gray-900"><%= user.phone %></p>
+    </div>
 
-  <p>
-    <strong>Cpf:</strong>
-    <%= user.cpf %>
-  </p>
-
+    <div class="sm:col-span-2">
+      <p class="mb-3 font-normal text-gray-700">CPF</p>
+      <p class="block mb-2 font-medium text-gray-900"><%= user.cpf %></p>
+    </div>
+  </div>
 </div>
