@@ -19,5 +19,23 @@ RSpec.describe User, type: :model do
     it { is_expected.to allow_value("user@example.com").for(:email) }
     it { is_expected.not_to allow_value("invalid_email@.com").for(:email) }
     it { is_expected.not_to allow_value("invalid_email@-example.com").for(:email) }
+
+    context "when the user's CPF is valid" do
+      it "doesn't add an error to cpf" do
+        user = build_stubbed(:user, cpf: CPF.generate(true))
+        user.valid?
+
+        expect(user.errors[:cpf]).to be_empty
+      end
+    end
+
+    context "when the user's CPF is invalid" do
+      it "adds an error message to cpf" do
+        user = build_stubbed(:user, cpf: "invalid_value")
+        user.valid?
+
+        expect(user.errors[:cpf]).to include("is invalid")
+      end
+    end
   end
 end
