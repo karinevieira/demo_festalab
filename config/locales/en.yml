@@ -28,6 +28,4 @@
 #       enabled: "ON"
 
 en:
-  errors:
-    messages:
-      invalid_cpf: is invalid
+  hello: "Hello world"

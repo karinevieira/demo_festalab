@@ -137,6 +137,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.4)
+    phonelib (0.8.4)
     psych (5.1.0)
       stringio
     puma (6.4.0)
@@ -244,6 +245,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
+  phonelib (= 0.8.4)
   puma (>= 5.0)
   rails (~> 7.1.0)
   rspec-rails (= 6.0.3)

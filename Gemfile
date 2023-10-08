@@ -17,6 +17,9 @@ gem "jbuilder"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# For phone validation and formatting using google libphonenumber library data [https://github.com/daddyz/phonelib]
+gem "phonelib", "0.8.4"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
