@@ -9,4 +9,8 @@ class User < ApplicationRecord
   validates :cpf, uniqueness: true
 
   validates :email, format: { with: VALID_EMAIL_REGEX }
+
+  def self.search(field)
+    where("name LIKE :field OR email LIKE :field OR phone LIKE :field OR cpf LIKE :field", field: "%#{field}%")
+  end
 end
