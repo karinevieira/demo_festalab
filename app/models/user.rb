@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
+  validates :cpf, cpf: true
+
   def self.search(field)
     where("name LIKE :field OR email LIKE :field OR phone LIKE :field OR cpf LIKE :field", field: "%#{field}%")
   end
