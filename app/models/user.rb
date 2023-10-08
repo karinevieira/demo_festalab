@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
+  validates :phone, phone: true, allow_blank: true
+
   validates :cpf, cpf: true
 
   def self.search(field)
