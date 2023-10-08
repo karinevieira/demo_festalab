@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<%= turbo_frame_tag "search-results" do %>
+  <%= render @user %>
+<% end %>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
