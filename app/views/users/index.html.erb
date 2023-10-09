@@ -4,44 +4,19 @@
 
 <div class="w-full flex justify-between py-4">
   <%= form_tag users_path, method: :get do |f| %>
-    <%= text_field_tag "search", nil, placeholder: "Search for users", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" %>
+    <%= text_field_tag "search",
+      nil,
+      placeholder: "Search for users",
+      class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+    %>
   <% end %>
 
-  <%= link_to "New user", new_user_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none" %>
+  <%= link_to "New user",
+    new_user_path,
+    class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
+  %>
 </div>
 
 <div id="users">
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 table-auto">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-        <tr>
-          <th scope="col" class="px-6 py-3"> Name </th>
-          <th scope="col" class="px-6 py-3"> Email </th>
-          <th scope="col" class="px-6 py-3"> Phone </th>
-          <th scope="col" class="px-6 py-3"> CPF </th>
-          <th scope="col" class="px-6 py-3"></th>
-          <th scope="col" class="px-6 py-3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @users.each do |user| %>
-          <tr class="bg-white border-b hover:bg-gray-50">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-              <%= link_to user.name, user %>
-            </th>
-            <td class="px-6 py-4"><%= user.email %></td>
-            <td class="px-6 py-4"><%= user.phone %></td>
-            <td class="px-6 py-4"><%= user.cpf %></td>
-            <td class="px-6 py-4 text-right">
-              <%= link_to "Edit", edit_user_path(user), class: "font-medium text-blue-600 hover:underline" %>
-            </td>
-            <td class="px-6 py-4 text-right">
-              <%= button_to "Destroy", user, method: :delete, class: "font-medium text-red-600 hover:underline" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <%= render "list", users: @users %>
 </div>
