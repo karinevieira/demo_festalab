@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+    <div class="sm:col-span-2">
+      <%= form.label :name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= form.text_field :name, placeholder: "Jane Doe", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full" %>
+    </div>
+
+    <div class="sm:col-span-2">
+      <%= form.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= form.text_field :email, placeholder: "janedoe@example.com", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full" %>
+    </div>
+
+    <div class="w-full">
+      <%= form.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= form.text_field :phone, placeholder: "+55 99 9999-9999", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full" %>
+    </div>
+
+    <div>
+      <%= form.label :cpf, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= form.text_field :cpf, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="flex items-center space-x-4">
+    <%= form.submit "Save", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-pointer" %>
+    <%= link_to "Cancel", users_path, class: "focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5" %>
   </div>
 <% end %>
