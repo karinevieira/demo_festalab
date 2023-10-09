@@ -1,24 +1,57 @@
-# README
+# demo_festalab
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![CI badge](https://github.com/karinevieira/demo_festalab/actions/workflows/ci.yml/badge.svg)
 
-Things you may want to cover:
+This repository contains the source code of a Ruby ​​on Rails web application that stores user information. And also this project is a technical test for Vinklo's selection process.
 
-* Ruby version
+## Settings
 
-* System dependencies
+### Requirements
+Make sure you have the following dependencies installed:
+* [Ruby](https://www.ruby-lang.org) 3.2.2
+* [Node](https://nodejs.org) 20.1.0 with [Yarn](https://classic.yarnpkg.com)
+* [Docker + Compose](https://www.docker.com)
+* libpq
 
-* Configuration
+libpq is used to execute PostgreSQL commands without having to install the complete database, as the database server is a service that runs in Docker and not on your local machine.
 
-* Database creation
+### Setting up
+Clone the demo_festalab repository:
+```sh
+git clone git@github.com:karinevieira/demo_festalab.git
+cd demo_festalab
+```
+Run the following command:
+```sh
+bin/setup
+```
 
-* Database initialization
+This command installs the Ruby and Javascript dependencies, uploads the services and recreates the database. Check the `bin/setup` file to see details of its operation.
 
-* How to run the test suite
+To start the application server, execute:
+```sh
+bin/dev
+```
+The application will be available at [http://localhost:3000](http://localhost:3000)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Static code analyzer
+```sh
+bundle exec rubocop
+```
+### Tests
+To run all tests:
+```sh
+bundle exec rspec
+```
 
-* Deployment instructions
+## Services
+This document describes the services used by the main application. Detailed configurations can be found in the file [docker-compose.yml](/docker-compose.yml).
 
-* ...
+### `db`: [PostgreSQL](https://www.postgresql.org/)
+The db service is a PostgreSQL server, a mature and reliable open-source relational database.
+
+Info:
+- **host**: localhost
+- **port**: 5432
+- **username**: postgres
+- **password**: postgres
