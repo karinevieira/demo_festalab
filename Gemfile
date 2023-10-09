@@ -37,6 +37,9 @@ gem "service_actor", "3.7.0"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# Utility-first CSS framework that can be composed to build any design, directly in your markup [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails", "2.0.30"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
