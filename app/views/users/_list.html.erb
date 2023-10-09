@@ -21,10 +21,15 @@
           <td class="px-6 py-4"><%= user.phone %></td>
           <td class="px-6 py-4"><%= user.cpf %></td>
           <td class="px-6 py-4 text-right">
-            <%= link_to "Edit", edit_user_path(user), class: "font-medium text-blue-600 hover:underline" %>
+            <%= link_to "Edit", edit_user_path(user), class: "font-medium text-primary hover:underline" %>
           </td>
           <td class="px-6 py-4 text-right">
-            <%= button_to "Destroy", user, method: :delete, class: "font-medium text-red-600 hover:underline" %>
+            <%= button_to "Destroy",
+              user,
+              method: :delete,
+              form: { data: { turbo_confirm:  "Are you sure?" }},
+              class: "font-medium text-[#EB5647] hover:underline"
+            %>
           </td>
         </tr>
       <% end %>
